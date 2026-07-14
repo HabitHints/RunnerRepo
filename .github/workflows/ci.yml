@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    # ── THE ONE LINE TO CHANGE FOR THE DEMO ────────────────────────────
+    # GitHub-hosted runner:
+    runs-on: ubuntu-latest
+    # Blacksmith runner (swap the line above for this one):
+    # runs-on: blacksmith-4vcpu-ubuntu-2404
+    # ───────────────────────────────────────────────────────────────────
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests (CPU-heavy)
+        run: npm test
+
+      - name: Run CPU benchmark
+        run: npm run bench
