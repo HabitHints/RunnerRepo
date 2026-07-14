@@ -15,7 +15,7 @@ jobs:
     # GitHub-hosted runner:
     runs-on: ubuntu-latest
     # Blacksmith runner (swap the line above for this one):
-    # runs-on: blacksmith-4vcpu-ubuntu-2404
+    # runs-on: blacksmith-2vcpu-ubuntu-2404
     # ───────────────────────────────────────────────────────────────────
     steps:
       - name: Checkout
