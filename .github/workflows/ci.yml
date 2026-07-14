@@ -13,7 +13,7 @@ jobs:
   build-and-test:
     # ── THE ONE LINE TO CHANGE FOR THE DEMO ────────────────────────────
     # GitHub-hosted runner:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     # Blacksmith runner (swap the line above for this one):
     # runs-on: blacksmith-2vcpu-ubuntu-2404
     # ───────────────────────────────────────────────────────────────────
